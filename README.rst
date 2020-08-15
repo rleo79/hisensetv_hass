@@ -5,6 +5,8 @@ README
 
 **Update 2020-07-09** This repository is no longer maintained.  I do not use this component anymore.  I found that my TV would drop the Ethernet connection and require physically unplugging/replugging it to maintain connectivity.
 
+**Update 2020-08-15** I will try to manage this repository. HiSense updated my TV firmware.
+
 Installation
 ************
 Place the ``custom_components`` folder into your configuration directory
@@ -26,7 +28,7 @@ your home-assistant server.
     pip install hisensetv
     hisensetv 10.0.0.28 --authorize
 
-See `newAM/hisensetv <https://github.com/newAM/hisensetv>`_ for more details.
+See `newAM/hisensetv <https://github.com/rleo79/hisensetv>`_ for more details.
 
 Configuration
 *************
