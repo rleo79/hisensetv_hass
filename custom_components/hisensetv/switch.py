@@ -6,6 +6,7 @@ from homeassistant.const import CONF_BROADCAST_ADDRESS
 from homeassistant.const import CONF_HOST
 from homeassistant.const import CONF_MAC
 from homeassistant.const import CONF_NAME
+from homeassistant.const import CONF_SSL
 from homeassistant.helpers.typing import ConfigType
 from homeassistant.helpers.typing import HomeAssistantType
 from typing import Callable
@@ -33,6 +34,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
         vol.Required(CONF_MAC): cv.string,
         vol.Optional(CONF_BROADCAST_ADDRESS): cv.string,
         vol.Optional(CONF_NAME, default=DEFAULT_NAME): cv.string,
+        vol.Optional(CONF_SSL, default=True): cv.boolean,
     }
 )
 
@@ -48,6 +50,7 @@ def setup_platform(
     host = config[CONF_HOST]
     mac = config[CONF_MAC]
     name = config[CONF_NAME]
+    ssl = config[CONF_SSL]
 
     add_entities(
         [
@@ -56,6 +59,7 @@ def setup_platform(
                 mac=mac,
                 name=name,
                 broadcast_address=broadcast_address,
+                ssl_context=ssl._create_unverified_context() if ssl else None,
             )
         ],
         True,
