@@ -28,7 +28,7 @@ your home-assistant server.
     pip install hisensetv
     hisensetv 10.0.0.28 --authorize
 
-See `newAM/hisensetv <https://github.com/rleo79/hisensetv>`_ for more details.
+See `rleo79/hisensetv <https://github.com/rleo79/hisensetv>`_ for more details.
 
 Configuration
 *************
